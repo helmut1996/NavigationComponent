@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TopAppBar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_PrimerFragment">Primer Fragment</string>
+    <string name="btn_SegundoFragment">Segundo Fragment</string>
+    <string name="tv_SegundoFragment">SegundoFragment</string>
+    <string name="btn_TercerFragment">Tercer Fragment</string>
+    <string name="tv_TercerFragment">Tercer Fragment</string>
+    <string name="btn_CuartoFragment">Cuarto Fragment</string>
 </resources>
