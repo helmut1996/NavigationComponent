@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.navigation_componet.databinding.FragmentGameBinding
 
 
@@ -14,6 +15,7 @@ class FragmentGame : Fragment() {
     private var _binding:FragmentGameBinding? = null
     private val binding get() = _binding!!
 
+    private val args:FragmentGameArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,11 +33,13 @@ class FragmentGame : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.tvGame.text = args.login.toString()
+
         binding.btnSalir.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentGame_to_welcomeFragment2)
+          val action =  FragmentGameDirections.actionFragmentGameToWelcomeFragment2()
+            findNavController().navigate(action)
         }
-
-
     }
 
     override fun onDestroyView() {

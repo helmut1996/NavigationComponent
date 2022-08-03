@@ -20,6 +20,9 @@
             app:destination="@id/welcomeFragment2"
             app:popUpTo="@id/welcomeFragment2"
             />
+        <argument
+            android:name="login"
+            app:argType="com.example.navigation_componet.models.Login" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"

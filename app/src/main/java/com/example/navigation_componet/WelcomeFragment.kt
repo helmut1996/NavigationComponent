@@ -32,7 +32,12 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnIniciar.setOnClickListener {
-            findNavController().navigate(R.id.action_welcomeFragment2_to_startFragment)
+            // Este es el segundo metodo y el mejor utilizado para desplazar  en las pantallas
+           val action = WelcomeFragmentDirections.actionWelcomeFragment2ToStartFragment()
+            findNavController().navigate(action)
+
+        //Este es uno de los metodos para navegar en las diferentes pantallas del proyecto
+        // findNavController().navigate(R.id.action_welcomeFragment2_to_startFragment)
         }
     }
 

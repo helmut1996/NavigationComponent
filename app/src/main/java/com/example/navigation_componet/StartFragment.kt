@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.navigation_componet.databinding.FragmentGameBinding
 import com.example.navigation_componet.databinding.FragmentStartBinding
+import com.example.navigation_componet.models.Login
 
 
 class StartFragment : Fragment() {
@@ -16,6 +17,8 @@ class StartFragment : Fragment() {
    // private val binding get() = _binding!!
 
     private lateinit var binding:FragmentStartBinding
+
+    private  var mOpcionSeleccinada = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,15 +42,40 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnGameMode.setOnClickListener {
-            findNavController().navigate(R.id.action_startFragment_to_gameModeDialog)
+            val action = StartFragmentDirections.actionStartFragmentToGameModeDialog()
+            findNavController().navigate(action)
         }
 
 
         binding.btnSesion.setOnClickListener {
-            findNavController().navigate(R.id.action_startFragment_to_fragmentGame)
+
+            IniciarSecion()
         }
+        observarSuscriptores()
 
     }
 
+
+
+    private fun IniciarSecion() {
+        val usuario = binding.textInputEditTextUsuario.text.toString()
+        val contra = binding.textInputEditTextContrasena.text.toString()
+        val modojuego = mOpcionSeleccinada
+
+        val login = Login(modojuego,usuario,contra)
+
+        val action2 = StartFragmentDirections.actionStartFragmentToFragmentGame(login)
+        findNavController().navigate(action2)
+    }
+
+    private fun observarSuscriptores() {
+        findNavController()
+            .currentBackStackEntry
+            ?.savedStateHandle
+            ?.getLiveData("gameModeKey","")
+            ?.observe(viewLifecycleOwner){
+                result -> mOpcionSeleccinada = result
+            }
+    }
 
 }
