@@ -6,19 +6,30 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.onNavDestinationSelected
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.*
 import com.example.topappbar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
-    lateinit var navController: NavController
+  private lateinit var navController: NavController
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.primerFragment,
+                R.id.segundoFragment,
+                R.id.tercerFragment
+            )
+
+        )
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container)
         if (navHostFragment != null) {
@@ -27,13 +38,16 @@ class MainActivity : AppCompatActivity() {
 
         //Toolbar
         setSupportActionBar(binding.Toolbar)
-        setupActionBarWithNavController(navController)
+        setupActionBarWithNavController(navController,appBarConfiguration)
+
+        //Botton Navegation
+        binding.bottomNavigationView.setupWithNavController(navController)
 
     }
 
     //para habilitar la flecha de atras qeue se muestra en el toolbar
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

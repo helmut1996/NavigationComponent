@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/activity_main.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/fragment_cuarto.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/fragment_primer.xml" value="0.25" />
         <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/fragment_segundo.xml" value="0.33" />
         <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/layout/fragment_tercer.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/menu/main_menu.xml" value="0.10885416666666667" />
         <entry key="..\:/Users/Helmut Colindres/Desktop/TopAppBar/app/src/main/res/menu/menu.xml" value="0.25" />
       </map>
     </option>

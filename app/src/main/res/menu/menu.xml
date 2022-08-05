@@ -9,11 +9,5 @@
         android:id="@+id/segundoFragment"
         android:title="Fragment 2"/>
 
-    <item
-        android:id="@+id/tercerFragment"
-        android:title="Fragment 3"/>
 
-    <item
-        android:id="@+id/cuartoFragment"
-        android:title="Fragment 4"/>
 </menu>
