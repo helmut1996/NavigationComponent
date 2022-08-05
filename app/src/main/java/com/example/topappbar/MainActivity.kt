@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.primerFragment,
                 R.id.segundoFragment,
                 R.id.tercerFragment
-            )
+            ),
+            binding.drawerLayout
 
         )
 
@@ -42,6 +43,10 @@ class MainActivity : AppCompatActivity() {
 
         //Botton Navegation
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        //DrawerLayout
+
+        binding.navView.setupWithNavController(navController)
 
     }
 
